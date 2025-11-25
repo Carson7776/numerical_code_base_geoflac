@@ -1,0 +1,11 @@
+Flags used to compile the code:
+   F90=gfortran debug=0 openmp=1 acc=0
+   CFLAGS=-g -fopenmp -O2
+   LDFLAGS= -fopenmp
+   PATH= /home/humaorong/.local/bin:/home/humaorong/bin:/usr/share/Modules/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin:/opt/dell/srvadmin/bin
+   LD_LIBRARY_PATH=
+   PWD=/home/humaorong/geoflac_modified/src
+
+
+Warning: Not a git repository. Cannot take code snapshot.
+Warning: Use 'git clone' to copy the code!
