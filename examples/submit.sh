@@ -37,6 +37,7 @@ python3 $D/util/flac2vtk.py ./
 python3 $D/util/flacmarker2vtk.py ./
 #draw force time relation graph
 python3 $D/util/draw_froc_time.py ./
+#draw topo time graph
 
 # ~~~~ submit command ~~~~
 # qsub < [script]
