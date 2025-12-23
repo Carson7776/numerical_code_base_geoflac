@@ -59,7 +59,7 @@ def compute_gravity(frame):
     # px in uniform spacing
     px = np.linspace(xmin, xmax, num=5*fl.nx)
     # pz is 4km above the highest topography to avoid high frequency oscillation
-    pz_height = np.max(zz) + 4e3
+    pz_height = np.max(zz) + 12e3
     pz = np.ones(px.shape) * pz_height
 
     # original topography defined in px grid
@@ -126,8 +126,17 @@ def compute_gravity(frame):
 
 
 if __name__ == '__main__':
-    frame = int(sys.argv[1])
+    
+    max_frame = 1001  
+    frames =  list(range(1,max_frame +1))
 
-    px, topo, gravity = compute_gravity(frame)
-    flac.printing(px, topo, gravity)
+    for frame in frames:
+        
+        px, topo, gravity = compute_gravity(frame)
 
+        # flac.printing(px, topo, gravity)
+
+        #save px,topo,gravity to a single txt file
+        gravity = np.column_stack((px,topo, gravity))
+        np.savetxt(f'gravity_frame_{frame}.0',gravity)
+        print(f'gravity_frame_{frame}.0')
