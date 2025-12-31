@@ -5,16 +5,16 @@
 #PBS -V
 #PBS -q q25g2
 #PBS -N GRm
-#PBS -l nodes=1:ppn=2
+#PBS -l nodes=1:ppn=4
 
-export OMP_NUM_THREADS=2  # same as ppn
+export OMP_NUM_THREADS=4  # same as ppn
 
 cd $PBS_O_WORKDIR
 cp $PBS_NODEFILE nodelist.$PBS_JOBID
 
 ###coping input &submit file to geoflac_modified_input_and_submit_file
-cp submit.sh /home/humaorong/geoflac_modified_input_and_submit/geoflac_modified_v00/GRm**_r**
-cp subduction.inp /home/humaorong/geoflac_modified_input_and_submit/geoflac_modified_v00/GRm**_r**
+cp submit.sh /home/humaorong/geoflac_modified_input_and_submit/geoflac_modified_v00/GRm81_r55
+cp subduction.inp /home/humaorong/geoflac_modified_input_and_submit/geoflac_modified_v00/GRm81_r55
 
 D=/home/humaorong/geoflac_modified
 
@@ -35,12 +35,9 @@ echo $(date)>>logtime.txt
 ### Convert model results
 python3 $D/util/flac2vtk.py ./
 python3 $D/util/flacmarker2vtk.py ./
-#draw force time relation graph
-python3 $D/util/draw_froc_time.py ./
-#draw diagram
-python3 $D/util/draw_diagram.py ./
-#draw topo time graph
 
+python3 $D/util/draw_diagram_linux.py ./
+python3 $D/util/draw_froc_time.py ./
 # ~~~~ submit command ~~~~
 # qsub < [script]
 
