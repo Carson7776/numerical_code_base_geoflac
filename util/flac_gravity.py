@@ -59,7 +59,7 @@ def compute_gravity(frame):
     # px in uniform spacing
     px = np.linspace(xmin, xmax, num=5*fl.nx)
     # pz is 4km above the highest topography to avoid high frequency oscillation
-    pz_height = np.max(zz) + 12e3
+    pz_height = np.max(zz) + 4e3
     pz = np.ones(px.shape) * pz_height
 
     # original topography defined in px grid
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     frames =  list(range(1,max_frame +1))
 
     for frame in frames:
-        
+        print(frame) 
         px, topo, gravity = compute_gravity(frame)
 
         # flac.printing(px, topo, gravity)
