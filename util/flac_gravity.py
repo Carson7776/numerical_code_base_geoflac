@@ -164,6 +164,7 @@ if __name__ == '__main__':
     parser.add_argument('-r', '--reference', choices=['mean', 'right'], default='mean',
                         help='Reference gravity setting: subtract mean (mean) or subtract far-right (right)')
     
+<<<<<<< Updated upstream
     args = parser.parse_args()
 
     px, topo, topomod, gravity = compute_gravity(args.frame, fill_basin=args.sediment, erode_forearc=args.erode, ref_grav=args.reference)
