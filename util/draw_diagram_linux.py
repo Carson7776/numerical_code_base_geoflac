@@ -172,7 +172,7 @@ def set_grid(frame):
        print(sub_xz_id)
     else:
         print("sub grid")
-        sub_xz = [200,400,-50.0,10.0] #(left,right,bottom,top) km
+        sub_xz = [650,850,-50.0,20.0] #(left,right,bottom,top) km
        
         sub_xz_left_id = (np.abs((x[:,0]) - sub_xz[0])).argmin()   # left boundary for sub xz
         sub_xz_right_id = (np.abs((x[:,0]) - sub_xz[1])).argmin()  # right boundary for sub xz
@@ -225,8 +225,8 @@ def set_color():
         "lightgray",        #phase15: hydrated mantle, will transform (partially melt) to mantle (#4) if warmer than olivine wet solidus and generate arc (#14) at surface.
         "darkslategrey",    #phase16: metamormpic sedimentary rock, transformed from (#10)
         "darkgray",         #phase17: dry mantle, stronger than (#4)
-        "black",            #phase18: custom
-        "black",            #phase19: custom
+        "gray",            #phase18: custom
+        "gray",            #phase19: custom
         ]
     phase_color = all_phase_color[:] #select phase color with in all_phase_color
         
