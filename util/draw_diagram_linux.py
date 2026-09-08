@@ -172,7 +172,7 @@ def set_grid(frame):
        print(sub_xz_id)
     else:
         print("sub grid")
-        sub_xz = [650,850,-50.0,20.0] #(left,right,bottom,top) km
+        sub_xz = [550,950,-50.0,20.0] #(left,right,bottom,top) km
        
         sub_xz_left_id = (np.abs((x[:,0]) - sub_xz[0])).argmin()   # left boundary for sub xz
         sub_xz_right_id = (np.abs((x[:,0]) - sub_xz[1])).argmin()  # right boundary for sub xz
